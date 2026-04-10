@@ -15,10 +15,6 @@
         "binding": "AI"
     },
     "vars": {
-        // "DOMAIN": "mail2telegram.YOUR_NAME.workers.dev",
-        // "TELEGRAM_ID": "YOUR_TELEGRAM_ID",
-        // "TELEGRAM_TOKEN": "YOUR_TELEGRAM_TOKEN",
-        // "FORWARD_LIST": "YOUR_BACKUP_EMAIL",
         "WORKERS_AI_MODEL": "@cf/meta/llama-3-8b-instruct", // Remove the comment to enable Workers AI
         // "OPENAI_API_KEY": "sk-", // Remove the comment to enable OpenAI
         // "OPENAI_COMPLETIONS_API": "https://openrouter.ai/api/v1/chat/completions",
