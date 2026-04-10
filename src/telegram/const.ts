@@ -1,13 +1,13 @@
 export const tmaModeDescription: { [key: string]: string } = {
-    test: 'Test an email address',
-    white: 'Manage the white list',
-    block: 'Manage the block list',
+    test: '测试邮箱地址是否为黑/白名单',
+    white: '管理白名单',
+    block: '管理黑名单',
 };
 
 export const telegramCommands = [
     {
         command: 'id',
-        description: '/id - Get your chat ID',
+        description: '/id - 获取用户聊天ID',
     },
     {
         command: 'test',
