@@ -11,7 +11,7 @@ type CommandHandlerGroup = Record<string, TelegramMessageHandler>;
 
 function handleIDCommand(env: Environment): TelegramMessageHandler {
     return async (msg: Telegram.Message): Promise<Response> => {
-        const text = `Your chat ID is ${msg.chat.id}`;
+        const text = `你的用户ID是 ${msg.chat.id}`;
         return await handleOpenTMACommand('', text, env)(msg);
     };
 }
@@ -32,7 +32,7 @@ function handleOpenTMACommand(mode: string, text: string | null, env: Environmen
                 inline_keyboard: [
                     [
                         {
-                            text: 'Open Manager',
+                            text: '打开管理器',
                             web_app: {
                                 url: `https://${DOMAIN}/tma?mode=${mode}`,
                             },
@@ -118,7 +118,7 @@ async function telegramCommandHandler(message: Telegram.Message, env: Environmen
         return;
     }
     // 兼容旧版命令返回默认信息
-    await handleOpenTMACommand('', `Unknown command: ${command}, try to reinitialize the bot.`, env)(message);
+    await handleOpenTMACommand('', `未知命令: ${command}，请尝试重启机器人。`, env)(message);
 }
 
 async function telegramCallbackHandler(callback: Telegram.CallbackQuery, env: Environment): Promise<void> {
