@@ -51,19 +51,19 @@
   <div id="app">
     <div v-if="func === 'list'">
       <h3 class="growContainer">
-        List Mode
+        管理列表
         <select class="growItem" style="margin-left: 10px;" v-model="mode">
-          <option value="block">Block list</option>
-          <option value="white">White list</option>
-          <option value="test">Test address</option>
+          <option value="block">黑名单</option>
+          <option value="white">白名单</option>
+          <option value="test">测试地址</option>
         </select>
       </h3>
       <p v-if="tipMessage">{{ tipMessage }}</p>
       <table>
         <thead>
           <tr>
-            <th>address</th>
-            <th>{{ mode === 'test' ? 'type' : 'action' }}</th>
+            <th>邮箱地址</th>
+            <th>操作</th>
           </tr>
         </thead>
         <tbody v-if="mode!=='test'">
@@ -72,13 +72,13 @@
               <input :placeholder="inputPlaceholder" class="growItem" v-model="inputAddress">
             </td>
             <td>
-              <button @click="addAddress">Add</button>
+              <button @click="addAddress">添加</button>
             </td>
           </tr>
           <tr :key="index" v-for="(address, index) in addresses">
             <td>{{ address }}</td>
             <td>
-              <button @click="removeAddress(index)">Delete</button>
+              <button @click="removeAddress(index)">删除</button>
             </td>
           </tr>
         </tbody>
@@ -88,7 +88,7 @@
               <input :placeholder="inputPlaceholder" class="growItem" v-model="inputAddress">
             </td>
             <td>
-              <button @click="testAddress">Test</button>
+              <button @click="testAddress">测试</button>
             </td>
           </tr>
           <tr :key="index" v-for="(item, index) in addresses">
@@ -220,11 +220,11 @@
         const inputPlaceholder = computed(() => {
           switch (mode.value) {
             case 'block':
-              return 'New block address regex';
+              return '输入正则表达式';
             case 'white':
-              return 'New white address regex';
+              return '输入正则表达式';
             case 'test':
-              return 'Test address';
+              return '输入邮箱地址';
           }
         });
 
