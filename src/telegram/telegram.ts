@@ -25,6 +25,7 @@ function handleOpenTMACommand(mode: string, text: string | null, env: Environmen
         const params: Telegram.SendMessageParams = {
             chat_id: msg.chat.id,
             text: text || tmaModeDescription[mode] || 'Address Manager',
+            parse_mode: 'Markdown',
         };
 
         if (msg.chat.type === 'private') {
