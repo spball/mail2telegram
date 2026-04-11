@@ -11,7 +11,7 @@ type CommandHandlerGroup = Record<string, TelegramMessageHandler>;
 
 function handleIDCommand(env: Environment): TelegramMessageHandler {
     return async (msg: Telegram.Message): Promise<Response> => {
-        const text = `你的用户ID是 ${msg.chat.id}`;
+        const text = `你的用户ID是 `${msg.chat.id}``;
         return await handleOpenTMACommand('', text, env)(msg);
     };
 }
