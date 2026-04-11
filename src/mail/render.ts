@@ -22,19 +22,19 @@ export async function renderEmailListMode(mail: EmailCache, env: Environment): P
     const text = `${mail.subject}\n\n-----------\nFrom\t:\t${mail.from}\nTo\t\t:\t${mail.to}`;
     const keyboard: Telegram.InlineKeyboardButton[] = [
         {
-            text: 'Preview',
+            text: '预览',
             callback_data: `p:${mail.id}`,
         },
     ];
     if ((AI && WORKERS_AI_MODEL) || OPENAI_API_KEY) {
         keyboard.push({
-            text: 'Summary',
+            text: '总结',
             callback_data: `s:${mail.id}`,
         });
     }
     if (mail.text) {
         keyboard.push({
-            text: 'Text',
+            text: '纯文本',
             url: `https://${DOMAIN}/email/${mail.id}?mode=text`,
         });
     }
@@ -68,11 +68,11 @@ function renderEmailDetail(text: string | undefined | null, id: string): EmailDe
             inline_keyboard: [
                 [
                     {
-                        text: 'Back',
+                        text: '🔙返回',
                         callback_data: `l:${id}`,
                     },
                     {
-                        text: 'Delete',
+                        text: '❌删除',
                         callback_data: 'delete',
                     },
                 ],
