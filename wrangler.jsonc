@@ -17,7 +17,7 @@
     "vars": {
         // "OPENAI_API_KEY": "sk-",
         "OPENAI_COMPLETIONS_API": "https://api.groq.com/openai/v1/chat/completions",
-        "OPENAI_CHAT_MODEL": "meta-llama/llama-4-scout-17b-16e-instruct",
+        "OPENAI_CHAT_MODEL": "moonshotai/kimi-k2-instruct-0905",
         "SUMMARY_TARGET_LANG": "Simplified_Chinese",
         "GUARDIAN_MODE": "false",
         "MAX_EMAIL_SIZE_POLICY": "truncate",
